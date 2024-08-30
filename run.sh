@@ -31,5 +31,7 @@ fi
 while IFS= read -r url || [[ -n "$url" ]]; do
     # Ignore empty or starting with # strings
     [[ -z "$url" || "$url" =~ ^# ]] && continue
+    sleep 2
     check_amp "$url"
+    sleep 2
 done < "$url_file"
